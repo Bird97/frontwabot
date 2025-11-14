@@ -41,16 +41,14 @@ export function Navbar() {
   if (isGerente) {
     navItems.push({ href: "/usuarios", label: "Usuarios" })
   }
-
   return (
-    <nav className="border-b-2 border-[#128C7E] bg-[#0B3C2E] shadow-lg sticky top-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between">
-          {/* Logo y Nombre */}
-          <div className="flex items-center gap-12">
-            <Link href="/home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-14 h-14 bg-[#25D366] rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <nav className="border-b-2 border-[#128C7E] bg-[#0B3C2E] shadow-lg sticky top-0 z-50 overflow-x-hidden">
+      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8 w-full">
+        <div className="flex h-16 sm:h-24 items-center justify-between min-w-0">          {/* Logo y Nombre */}
+          <div className="flex items-center gap-4 sm:gap-8 lg:gap-12 min-w-0 flex-shrink-0">
+            <Link href="/home" className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-[#25D366] rounded-xl flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -59,18 +57,16 @@ export function Navbar() {
                   />
                 </svg>
               </div>
-              <span className="text-3xl font-bold text-white tracking-tight">Wabot</span>
-            </Link>
-
-            {/* Navegación */}
-            <div className="hidden md:flex items-center gap-3">
+              <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight">Wabot</span>
+            </Link>            {/* Navegación */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
                   <Button
                     variant="ghost"
                     size="lg"
                     className={cn(
-                      "font-semibold text-lg transition-all duration-200 px-6 h-12",
+                      "font-semibold text-sm xl:text-lg transition-all duration-200 px-3 xl:px-6 h-10 xl:h-12",
                       pathname === item.href
                         ? "bg-[#25D366] text-white hover:bg-[#25D366]/90 shadow-md"
                         : "text-white/90 hover:text-white hover:bg-white/15",
@@ -81,16 +77,14 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-          </div>
-
-          {/* Acciones */}
-          <div className="flex items-center gap-4">
+          </div>          {/* Acciones */}
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-shrink-0">
             <Button
               onClick={handleGoogleRedirect}
-              size="lg"
-              className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all h-12 px-6"
+              size="sm"
+              className="bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold text-xs sm:text-sm lg:text-lg shadow-lg hover:shadow-xl transition-all h-8 sm:h-10 lg:h-12 px-2 sm:px-4 lg:px-6"
             >
-              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-1 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -98,15 +92,17 @@ export function Navbar() {
                   d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
                 />
               </svg>
-              Bot WhatsApp
+              <span className="hidden sm:inline">Bot WhatsApp</span>
+              <span className="sm:hidden">Bot</span>
             </Button>
             <Button
               onClick={handleLogout}
               variant="outline"
-              size="lg"
-              className="border-2 border-white/30 text-white hover:bg-white/15 hover:border-white/50 bg-transparent font-semibold text-lg h-12 px-6 transition-all"
+              size="sm"
+              className="border-2 border-white/30 text-white hover:bg-white/15 hover:border-white/50 bg-transparent font-semibold text-xs sm:text-sm lg:text-lg h-8 sm:h-10 lg:h-12 px-2 sm:px-4 lg:px-6 transition-all"
             >
-              <LogOut className="h-6 w-6 mr-2" />
+              <LogOut className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 sm:mr-2" />
+              <span className="hidden sm:inline">Salir</span>
             </Button>
           </div>
         </div>

@@ -103,12 +103,11 @@ export default function LoginPage() {
 
         {/* Right side - Login Form */}
         <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-12">
-          <div className="w-full max-w-md">
-            {/* Mobile Logo */}
+          <div className="w-full max-w-md">            {/* Mobile Logo */}
             <div className="lg:hidden mb-8 text-center">
               <div className="inline-flex items-center gap-3 mb-6">
                 <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-xl">
-                  <MessageCircle className="w-8 h-8 text-[#25D366]" />
+                  <img src="/images/logoIcon.png" alt="Wabot logo" className="w-12 h-12 rounded-xl object-contain" />
                 </div>
                 <div className="text-left">
                   <h1 className="text-2xl font-bold text-white">Wabot</h1>

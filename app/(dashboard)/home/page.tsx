@@ -9,8 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Textarea } from "@/components/ui/textarea"
-import { UserPlus, Users, Loader2, AlertCircle } from "lucide-react"
+import { UserPlus, Users, Loader2, AlertCircle, MessageCircle } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { WhatsAppBotButton } from "@/components/WhatsAppBotButton"
 
 interface RestaurantConfig {
   nombre: string
@@ -98,9 +99,8 @@ export default function HomePage() {
       setIsSaving(false)
     }
   }
-
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6 w-full overflow-x-hidden">
       <div className="flex items-center gap-3">
         <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0">
           <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -250,6 +250,26 @@ export default function HomePage() {
           </CardContent>
         </Card>
       )}
+
+      {/* Sección del Bot de WhatsApp */}
+      <Card className="shadow-md border-[#25D366]/30 bg-gradient-to-br from-green-50 to-emerald-50">
+        <CardHeader className="border-b border-[#25D366]/20">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-[#25D366] rounded-lg flex items-center justify-center">
+              <MessageCircle className="w-5 h-5 text-white" />
+            </div>
+            <div>
+              <CardTitle className="text-xl text-[#1C1C1C]">Bot de WhatsApp</CardTitle>
+              <CardDescription className="text-[#1C1C1C]/60">
+                Inicia y gestiona el bot de pedidos por WhatsApp
+              </CardDescription>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="pt-6">
+          <WhatsAppBotButton />
+        </CardContent>
+      </Card>
 
       <Card className="shadow-md border-gray-200 bg-[#FCF6ED]">
         <CardContent className="pt-6">
