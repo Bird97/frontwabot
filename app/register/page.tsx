@@ -386,7 +386,7 @@ export default function RegisterPage() {
             {/* Footer text for mobile */}
             <div className="lg:hidden mt-8 text-center">
               <p className="text-white/80 text-sm">
-                © 2024 Wabot. Todos los derechos reservados.
+                © 2025 Wabot. Todos los derechos reservados.
               </p>
             </div>
           </div>

@@ -241,7 +241,7 @@ export default function RootPage() {
               <span className="text-2xl font-bold">Wabot</span>
             </div>
             <p className="text-gray-400">
-              © 2024 Wabot. Todos los derechos reservados.
+              © 2025 Wabot. Todos los derechos reservados.
             </p>
           </div>
         </div>
