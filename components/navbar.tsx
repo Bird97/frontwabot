@@ -26,8 +26,9 @@ export function Navbar() {
     authService.logout()
   }
 
+  const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL || "http://localhost:3001";
   const handleGoogleRedirect = () => {
-    window.open("http://localhost:3000/onboarding", "_blank")
+    window.open(`${BOT_URL}`, "_blank")
   }
 
   const navItems = [
